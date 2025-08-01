@@ -1,5 +1,7 @@
 from openai import OpenAI
+from dotenv import load_dotenv
 
+load_dotenv()
 client = OpenAI()
 
 prompt = "You are the world's expert on Gen Alpha Brainrot.  Who's the most popular Italian brainrot meme?"

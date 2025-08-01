@@ -6,10 +6,22 @@ Created by: Lennard Garcia
 Date: 2025-07-29
 """
 
+from dotenv import load_dotenv
 from openai import OpenAI
+import sys
 
 # initialize the OpenAI client first
+load_dotenv()
 client = OpenAI()
+
+# validate the client before proceeding
+try:
+    models = client.models.list()
+    print("Client initialized")
+except Exception as e:
+    print("Client initialization failed: ")
+    print(e)
+    sys.exit(1)
 
 # create the required variables
 ingredients = []
